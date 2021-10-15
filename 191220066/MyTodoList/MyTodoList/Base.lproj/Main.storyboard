@@ -56,7 +56,7 @@
                     <navigationItem key="navigationItem" title="Todo List" id="fzv-tf-wvZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="uwa-gF-MCj">
                             <connections>
-                                <segue destination="gV7-vL-Cww" kind="presentation" id="cwx-MI-dXE"/>
+                                <segue destination="gV7-vL-Cww" kind="presentation" identifier="addItem" id="cwx-MI-dXE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

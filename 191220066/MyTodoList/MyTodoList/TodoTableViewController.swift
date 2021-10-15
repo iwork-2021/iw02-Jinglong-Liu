@@ -90,14 +90,24 @@ class TodoTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "addItem"{
+            let addItemViewController = segue.destination as! ItemViewController
+            addItemViewController.addItemDelegate = self
+        }
     }
-    */
+    
 
+}
+extension TodoTableViewController:AddItemDelegate{
+    func addItem(item: TodoItem) {
+        self.items.append(item)
+        self.tableView.reloadData()
+    }
 }

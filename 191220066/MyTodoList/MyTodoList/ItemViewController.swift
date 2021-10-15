@@ -6,13 +6,15 @@
 //
 
 import UIKit
-
+protocol AddItemDelegate {
+    func addItem(item:TodoItem)
+}
 class ItemViewController: UIViewController {
 
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var titleInput: UITextField!
     @IBOutlet weak var isChecked: UISwitch!
-    
+    var addItemDelegate:AddItemDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,7 @@ class ItemViewController: UIViewController {
     }
     
     @IBAction func done(_ sender: Any) {
+        self.addItemDelegate?.addItem(item: TodoItem(title: titleInput.text!, isChecked: isChecked.isOn))
         self.dismiss(animated: true, completion: nil)
     }
     /*
