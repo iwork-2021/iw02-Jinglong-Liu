@@ -9,7 +9,7 @@ import UIKit
 
 class ItemViewController: UIViewController {
 
-    @IBOutlet weak var DoneButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var titleInput: UITextField!
     @IBOutlet weak var isChecked: UISwitch!
     
@@ -17,6 +17,7 @@ class ItemViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        doneButton.isEnabled = false
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -36,4 +37,13 @@ class ItemViewController: UIViewController {
     }
     */
 
+}
+extension ItemViewController:UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let oldText = textField.text!
+        let stringRange = Range(range,in:oldText)!
+        let newText = oldText.replacingCharacters(in: stringRange, with: string)
+        doneButton.isEnabled = !newText.isEmpty
+        return true
+    }
 }

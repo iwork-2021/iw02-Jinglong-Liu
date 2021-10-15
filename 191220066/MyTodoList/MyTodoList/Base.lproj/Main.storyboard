@@ -100,6 +100,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gV7-vL-Cww" id="ZHp-HA-i3W"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checked" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIS-s4-V8H">
                                 <rect key="frame" x="63" y="146" width="116" height="36"/>
@@ -129,7 +132,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="DoneButton" destination="zPe-jM-S8l" id="OpG-9U-woV"/>
+                        <outlet property="doneButton" destination="zPe-jM-S8l" id="lNc-OE-tZR"/>
                         <outlet property="isChecked" destination="saB-nh-7Ki" id="ze3-zb-Or8"/>
                         <outlet property="titleInput" destination="NxV-ka-FKn" id="KPD-jk-eXa"/>
                     </connections>
