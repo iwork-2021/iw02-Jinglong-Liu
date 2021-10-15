@@ -45,6 +45,7 @@
                                 <connections>
                                     <outlet property="status" destination="rYR-XC-TtR" id="cQe-t1-4Ze"/>
                                     <outlet property="title" destination="jpp-h4-xc3" id="bcl-4c-cO0"/>
+                                    <segue destination="gV7-vL-Cww" kind="presentation" identifier="editItem" trigger="accessoryAction" id="o0d-if-18R"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -160,6 +161,9 @@
             <point key="canvasLocation" x="-272.46376811594206" y="14.732142857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="o0d-if-18R"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -101,6 +101,21 @@ class TodoTableViewController: UITableViewController {
             let addItemViewController = segue.destination as! ItemViewController
             addItemViewController.addItemDelegate = self
         }
+        else if segue.identifier == "editItem"{
+            let editItemViewController = segue.destination as! ItemViewController
+            let cell = sender as! TodoTableViewCell
+            var isChecked:Bool
+            if cell.status.text! == "✅"{
+                isChecked = true
+            }
+            else{
+                isChecked = false
+            }
+            let item = TodoItem(title: cell.title.text!, isChecked: isChecked)
+            editItemViewController.itemToEdit = item
+            editItemViewController.itemIndex = tableView.indexPath(for: cell)!.row
+            editItemViewController.editItemDelegate = self
+        }
     }
     
 
@@ -108,6 +123,12 @@ class TodoTableViewController: UITableViewController {
 extension TodoTableViewController:AddItemDelegate{
     func addItem(item: TodoItem) {
         self.items.append(item)
+        self.tableView.reloadData()
+    }
+}
+extension TodoTableViewController:EditItemDelegate{
+    func editItem(newItem: TodoItem, itemIndex: Int) {
+        self.items[itemIndex] = newItem
         self.tableView.reloadData()
     }
 }

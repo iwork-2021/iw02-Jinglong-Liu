@@ -9,17 +9,28 @@ import UIKit
 protocol AddItemDelegate {
     func addItem(item:TodoItem)
 }
+protocol EditItemDelegate {
+    func editItem(newItem:TodoItem,itemIndex:Int)
+}
 class ItemViewController: UIViewController {
 
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var titleInput: UITextField!
     @IBOutlet weak var isChecked: UISwitch!
     var addItemDelegate:AddItemDelegate?
+    var editItemDelegate:EditItemDelegate?
+    var itemToEdit:TodoItem?
+    var itemIndex:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         doneButton.isEnabled = false
+        if itemToEdit != nil{
+            doneButton.isEnabled = true
+            self.titleInput.text! = itemToEdit!.title
+            self.isChecked.isOn = itemToEdit!.isChecked
+        }
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -27,7 +38,13 @@ class ItemViewController: UIViewController {
     }
     
     @IBAction func done(_ sender: Any) {
-        self.addItemDelegate?.addItem(item: TodoItem(title: titleInput.text!, isChecked: isChecked.isOn))
+        if self.itemToEdit == nil{
+            self.addItemDelegate?.addItem(item: TodoItem(title: titleInput.text!, isChecked: isChecked.isOn))
+        }
+        else{
+            self.editItemDelegate?.editItem(newItem: TodoItem(title: titleInput.text!, isChecked: isChecked.isOn), itemIndex: self.itemIndex)
+        }
+        
         self.dismiss(animated: true, completion: nil)
     }
     /*
