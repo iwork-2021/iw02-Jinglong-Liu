@@ -17,6 +17,7 @@
 		04E5E6FA27191FE600204CD6 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E6F927191FE600204CD6 /* TodoTableViewController.swift */; };
 		04E5E6FF2719206000204CD6 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E6FE2719206000204CD6 /* TodoTableViewCell.swift */; };
 		04E5E704271923E000204CD6 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E703271923E000204CD6 /* TodoItem.swift */; };
+		04E5E7092719378400204CD6 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E5E7082719378400204CD6 /* ItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		04E5E6F927191FE600204CD6 /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
 		04E5E6FE2719206000204CD6 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		04E5E703271923E000204CD6 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
+		04E5E7082719378400204CD6 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				04E5E6C327191E2F00204CD6 /* AppDelegate.swift */,
 				04E5E6C527191E2F00204CD6 /* SceneDelegate.swift */,
 				04E5E6C927191E2F00204CD6 /* Main.storyboard */,
+				04E5E7082719378400204CD6 /* ItemViewController.swift */,
 				04E5E703271923E000204CD6 /* TodoItem.swift */,
 				04E5E6FE2719206000204CD6 /* TodoTableViewCell.swift */,
 				04E5E6F927191FE600204CD6 /* TodoTableViewController.swift */,
@@ -269,6 +272,7 @@
 				04E5E6FA27191FE600204CD6 /* TodoTableViewController.swift in Sources */,
 				04E5E6C627191E2F00204CD6 /* SceneDelegate.swift in Sources */,
 				04E5E6FF2719206000204CD6 /* TodoTableViewCell.swift in Sources */,
+				04E5E7092719378400204CD6 /* ItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
