@@ -22,6 +22,7 @@ class TodoTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        loadItems()
     }
 
     // MARK: - Table view data source
@@ -130,5 +131,31 @@ extension TodoTableViewController:EditItemDelegate{
     func editItem(newItem: TodoItem, itemIndex: Int) {
         self.items[itemIndex] = newItem
         self.tableView.reloadData()
+    }
+}
+extension  TodoTableViewController{
+    func dataFilePath()->URL{
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        return path!.appendingPathComponent("TodoItems.json")
+    }
+    func saveAllItems(){
+        do{
+            let data = try JSONEncoder().encode(items)
+            try data.write(to: dataFilePath(), options: .atomic)
+        }
+        catch{
+            print("Can't save :\(error.localizedDescription)")
+        }
+    }
+    func loadItems(){
+        let path = dataFilePath()
+        if let data = try? Data(contentsOf: path){
+            do{
+                items = try JSONDecoder().decode([TodoItem].self, from: data)
+            }
+            catch{
+                print("Error decoding list\(error.localizedDescription)")
+            }
+        }
     }
 }
